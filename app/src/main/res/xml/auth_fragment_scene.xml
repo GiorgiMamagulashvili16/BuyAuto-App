@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="600">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/arrowView" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/createNewAccountTextView"
+            motion:layout_constraintEnd_toStartOf="@id/rightArrowView"
+            motion:layout_constraintStart_toEndOf="@id/leftArrowView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/rightArrowView"
+            motion:layout_constraintTop_toTopOf="@id/leftArrowView">
+            <CustomAttribute
+                motion:attributeName="text"
+                motion:customStringValue="Create New Account" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/logInContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toTopOf="@+id/arrowView"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone" />
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_80_dp"
+            android:id="@+id/arrowView"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp" />
+        <Constraint
+            android:id="@+id/leftArrowView"
+            android:layout_width="@dimen/dimen_50_dp"
+            android:layout_height="@dimen/dimen_50_dp"
+            android:layout_marginStart="@dimen/dimen_20_dp"
+            motion:layout_constraintTop_toTopOf="@id/arrowView"
+            motion:layout_constraintStart_toStartOf="@id/arrowView"
+            android:layout_marginTop="@dimen/dimen_20_dp"
+            android:rotationX="180" />
+        <Constraint
+            android:id="@+id/rightArrowView"
+            motion:layout_constraintEnd_toEndOf="@id/arrowView"
+            android:layout_width="@dimen/dimen_50_dp"
+            android:layout_height="@dimen/dimen_50_dp"
+            android:layout_marginEnd="@dimen/dimen_20_dp"
+            motion:layout_constraintTop_toTopOf="@id/arrowView"
+            android:layout_marginTop="@dimen/dimen_20_dp"
+            android:rotationX="180" />
+        <Constraint
+            android:id="@+id/signUpContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            motion:layout_constraintTop_toBottomOf="@id/arrowView" />
+        <Constraint
+            android:id="@+id/createNewAccountTextView"
+            motion:layout_constraintEnd_toStartOf="@id/rightArrowView"
+            motion:layout_constraintStart_toEndOf="@id/leftArrowView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/rightArrowView"
+            motion:layout_constraintTop_toTopOf="@id/leftArrowView">
+            <CustomAttribute
+                motion:attributeName="text"
+                motion:customStringValue="Log in" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
