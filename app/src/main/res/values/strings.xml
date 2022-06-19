@@ -7,4 +7,8 @@
     <string name="sign_up">sign up</string>
     <string name="username">username</string>
     <string name="log_in">log in</string>
+    <string name="please_fill_all_field">Please Fill All Fields</string>
+    <string name="incorrect_email">Incorrect Email address</string>
+    <string name="password_is_too_short">Password is too short</string>
+    <string name="passwords_does_not_matches">password does not match</string>
 </resources>

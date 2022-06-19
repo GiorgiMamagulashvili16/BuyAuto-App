@@ -6,6 +6,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
+        android:id="@+id/authTransition"
         motion:duration="600">
        <KeyFrameSet>
        </KeyFrameSet>

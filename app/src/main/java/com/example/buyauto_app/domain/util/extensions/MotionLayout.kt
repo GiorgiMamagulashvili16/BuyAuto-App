@@ -1,4 +1,4 @@
-package com.example.buyauto_app.domain.extensions
+package com.example.buyauto_app.domain.util.extensions
 
 import androidx.constraintlayout.motion.widget.MotionLayout
 
