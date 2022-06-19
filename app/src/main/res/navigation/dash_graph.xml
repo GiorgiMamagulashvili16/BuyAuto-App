@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dash_graph"
+    app:startDestination="@id/carsFragment">
+
+    <fragment
+        android:id="@+id/carsFragment"
+        android:name="com.example.buyauto_app.presentation.cars_screen.CarsFragment"
+        android:label="cars_fragment"
+        tools:layout="@layout/cars_fragment" />
+    <fragment
+        android:id="@+id/addCarFragment"
+        android:name="com.example.buyauto_app.presentation.add_car_screen.AddCarFragment"
+        android:label="add_car_fragment"
+        tools:layout="@layout/add_car_fragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.buyauto_app.presentation.favorites_screen.FavoritesFragment"
+        android:label="favorites_fragment"
+        tools:layout="@layout/favorites_fragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.buyauto_app.presentation.profile_screen.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+    <action
+        android:id="@+id/action_global_addCarFragment"
+        app:destination="@id/addCarFragment" />
+    <action
+        android:id="@+id/action_global_carsFragment"
+        app:destination="@id/carsFragment" />
+    <action
+        android:id="@+id/action_global_profileFragment"
+        app:destination="@id/profileFragment" />
+    <action
+        android:id="@+id/action_global_favoritesFragment"
+        app:destination="@id/favoritesFragment" />
+</navigation>

@@ -11,4 +11,5 @@
     <string name="incorrect_email">Incorrect Email address</string>
     <string name="password_is_too_short">Password is too short</string>
     <string name="passwords_does_not_matches">password does not match</string>
+    <string name="choose_images">choose images</string>
 </resources>
