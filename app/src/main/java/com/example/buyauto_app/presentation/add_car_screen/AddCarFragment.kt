@@ -123,7 +123,9 @@ open class AddCarFragment : BaseFragment<AddCarFragmentBinding, AddCarViewModel>
                 manufactureTextView.text.toString(),
                 modelTextView.text.toString(),
                 yearTextView.text.toString(),
-                descriptionEditText.text.toString()
+                descriptionEditText.text.toString(),
+                priceEditText.text.toString().toInt(),
+                numberEditText.text.toString()
             )
         }
     }
@@ -136,7 +138,7 @@ open class AddCarFragment : BaseFragment<AddCarFragmentBinding, AddCarViewModel>
                 requireActivity(),
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) -> {
-                createSnackBar("appneed this persmission"){
+                createSnackBar("app need this permission"){
                     setAction("ok"){
                         dismiss()
                     }

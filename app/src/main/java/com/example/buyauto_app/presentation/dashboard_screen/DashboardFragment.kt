@@ -28,8 +28,7 @@ class DashboardFragment : BaseFragment<DashboardFragmentBinding,DashboardViewMod
     }
 
     private fun initDashboardNavController() {
-        val host =
-            childFragmentManager.findFragmentById(R.id.dashboardFragmentContainer) as NavHostFragment
+        val host = childFragmentManager.findFragmentById(R.id.dashboardFragmentContainer) as NavHostFragment
         navController = host.findNavController()
     }
 

@@ -37,4 +37,17 @@
     <action
         android:id="@+id/action_global_favoritesFragment"
         app:destination="@id/favoritesFragment" />
+
+    <fragment
+        android:id="@+id/carDetailsFragment"
+        android:name="com.example.buyauto_app.presentation.car_details.CarDetailsFragment"
+        android:label="car_details_fragment"
+        tools:layout="@layout/car_details_fragment" >
+        <argument
+            android:name="carItem"
+            app:argType="com.example.buyauto_app.domain.model.CarItem" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_carDetailsFragment"
+        app:destination="@id/carDetailsFragment" />
 </navigation>

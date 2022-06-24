@@ -14,15 +14,21 @@ class AddCarValidatorUseCase(private val resourceProvider: StringResourceProvide
         model: String,
         year: String,
         description: String,
-        imageList:List<Uri>?
+        imageList:List<Uri>?,
+        price:Int?,
+        number: String
     ): ValidatorResult {
         return when {
             lat == null || long == null || lat == 0.0 || long == 0.0 || imageList.isNullOrEmpty()-> ValidatorResult(
                 false, resourceProvider.getString(R.string.please_fill_all_field)
             )
-            manufacture.isBlank() || model.isBlank() || year.isBlank() || description.isBlank() -> ValidatorResult(
+            manufacture.isBlank() || model.isBlank() || year.isBlank() || description.isBlank() || price == 0 || price == null-> ValidatorResult(
                 false, resourceProvider.getString(R.string.please_fill_all_field)
             )
+            number.length != 9 -> ValidatorResult(
+                false, resourceProvider.getString(R.string.please_fill_all_field)
+            )
+
             else -> ValidatorResult()
         }
     }

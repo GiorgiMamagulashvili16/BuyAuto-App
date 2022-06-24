@@ -1,102 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.add_car_screen.AddCarFragment">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/imagesRecyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/dimen_10_dp"
-        android:minHeight="100dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="@dimen/dimen_5_dp"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/choose_images"
-        app:layout_constraintTop_toTopOf="@+id/imagesRecyclerView"
-        app:layout_constraintEnd_toEndOf="@+id/imagesRecyclerView"
-        app:layout_constraintStart_toStartOf="@+id/imagesRecyclerView"
-        app:layout_constraintBottom_toBottomOf="@+id/imagesRecyclerView"
-        android:textSize="@dimen/dimen_21_sp"
-        android:textColor="@color/bg_black"
-        android:id="@+id/chooseImageTextView" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imagesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5_dp"
+            android:minHeight="100dp"
+            android:padding="@dimen/dimen_10_dp"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/manufactureTextView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="@dimen/dimen_20_dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text_bg"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="@dimen/dimen_10_dp"
-        android:text="Manufacture"
-        app:layout_constraintTop_toBottomOf="@id/imagesRecyclerView" />
+        <TextView
+            android:id="@+id/chooseImageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_images"
+            android:textColor="@color/bg_black"
+            android:textSize="@dimen/dimen_21_sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imagesRecyclerView"
+            app:layout_constraintEnd_toEndOf="@+id/imagesRecyclerView"
+            app:layout_constraintStart_toStartOf="@+id/imagesRecyclerView"
+            app:layout_constraintTop_toTopOf="@+id/imagesRecyclerView" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/modelTextView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="@dimen/dimen_20_dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edit_text_bg"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="@dimen/dimen_10_dp"
-        android:text="Model"
-        app:layout_constraintTop_toBottomOf="@id/manufactureTextView" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/manufactureTextView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="@dimen/dimen_20_dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_10_dp"
+            android:text="Manufacture"
+            app:layout_constraintTop_toBottomOf="@id/imagesRecyclerView" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/yearTextView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="@dimen/dimen_20_dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edit_text_bg"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="@dimen/dimen_10_dp"
-        android:text="Year"
-        app:layout_constraintTop_toBottomOf="@id/modelTextView" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/modelTextView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="@dimen/dimen_20_dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_10_dp"
+            android:text="Model"
+            app:layout_constraintTop_toBottomOf="@id/manufactureTextView" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/descriptionEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dimen_20_dp"
-        android:layout_marginTop="@dimen/dimen_20_dp"
-        android:background="@drawable/edit_text_bg"
-        android:gravity="top"
-        android:hint="description"
-        android:minHeight="@dimen/dimen_120_dp"
-        android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/yearTextView" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/yearTextView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="@dimen/dimen_20_dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_10_dp"
+            android:text="Year"
+            app:layout_constraintTop_toBottomOf="@id/modelTextView" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dimen_30_sp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/bg_button"
-        android:backgroundTint="@color/bg_black"
-        android:text="Save Car"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/descriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20_dp"
+            android:layout_marginTop="@dimen/dimen_20_dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="top"
+            android:hint="description"
+            android:minHeight="@dimen/dimen_120_dp"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/yearTextView" />
 
-    <ProgressBar
-        android:id="@+id/loadingProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:indeterminateTint="@color/bg_black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/priceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20_dp"
+            android:layout_marginTop="@dimen/dimen_20_dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="top"
+            android:hint="price"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/descriptionEditText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/numberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20_dp"
+            android:layout_marginTop="@dimen/dimen_20_dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="top"
+            android:hint="your number"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/priceEditText" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_30_sp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="@color/bg_black"
+            android:text="Save Car"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numberEditText" />
+
+        <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/bg_black"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

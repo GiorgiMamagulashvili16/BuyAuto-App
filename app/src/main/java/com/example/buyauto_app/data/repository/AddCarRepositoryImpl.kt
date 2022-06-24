@@ -42,6 +42,8 @@ class AddCarRepositoryImpl(
                         "model" to model,
                         "year" to year,
                         "description" to description,
+                        "price" to price,
+                        "ownerNumber" to ownerNumber
                     )
                     carsCollection.document(carId).set(carUploadItem).await()
                     Resource.Success(Unit)
@@ -51,6 +53,6 @@ class AddCarRepositoryImpl(
     }
 
     companion object {
-        private const val CARS_COLL = "cars_collection"
+        const val CARS_COLL = "cars_collection"
     }
 }

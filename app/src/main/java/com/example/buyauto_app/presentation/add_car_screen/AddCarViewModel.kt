@@ -30,7 +30,9 @@ class AddCarViewModel(
         manufacture: String,
         model: String,
         year: String,
-        description: String
+        description: String,
+        price: Int,
+        number: String
     ) {
         execute {
             _screenState.postValue(AddCarScreenState(isLoading = true))
@@ -40,9 +42,21 @@ class AddCarViewModel(
                 manufacture = manufacture,
                 model = model,
                 year = year,
-                description = description
+                description = description,
+                price = price,
+                ownerNumber = number
             )
-            addCarValidatorUseCase.validate(lat, long, manufacture, model, year, description,selectedImages.value!!).also {
+            addCarValidatorUseCase.validate(
+                lat,
+                long,
+                manufacture,
+                model,
+                year,
+                description,
+                selectedImages.value!!,
+                price,
+                number
+            ).also {
                 if (it.success) {
                     _screenState.postValue(addCarUseCase.addCar(carItem, selectedImages.value!!))
                 } else {
