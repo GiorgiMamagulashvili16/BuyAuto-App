@@ -1,6 +1,6 @@
 package com.example.buyauto_app.domain.usecase.auth
 
-data class AuthValidatorResult(
+data class ValidatorResult(
     val success: Boolean = true,
     val errorMess: String? = null
 )

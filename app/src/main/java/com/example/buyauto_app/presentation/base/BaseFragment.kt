@@ -20,7 +20,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment(), Koin
     private var _binding: VB? = null
     protected val binding get() = _binding!!
 
-    private lateinit var viewModel: VM
+    lateinit var viewModel: VM
     abstract val viewModelClass: KClass<VM>
 
     override fun onCreate(savedInstanceState: Bundle?) {

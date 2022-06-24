@@ -8,6 +8,7 @@ import com.example.buyauto_app.presentation.cars_screen.di.carsScreenModule
 import com.example.buyauto_app.presentation.dashboard_screen.di.dashModule
 import com.example.buyauto_app.presentation.favorites_screen.di.favoritesScreenModule
 import com.example.buyauto_app.presentation.profile_screen.di.profileScreenModule
+import com.example.buyauto_app.presentation.splash_screen.di.splashModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -20,7 +21,7 @@ class App :Application(){
             modules(
                 listOf(
                     appModule, authScreenModule, dashModule, carsScreenModule,
-                    addCarScreenModule, favoritesScreenModule, profileScreenModule
+                    addCarScreenModule, favoritesScreenModule, profileScreenModule, splashModule
                 )
             )
         }

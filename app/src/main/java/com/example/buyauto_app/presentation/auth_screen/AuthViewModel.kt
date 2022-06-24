@@ -42,7 +42,7 @@ class AuthViewModel(
             authValidator.validateSignIn(email, password).also {
                 if (it.success) {
                     _authScreenState.postValue(authUseCase.logIn(email, password))
-                }else {
+                } else {
                     _authScreenState.postValue(AuthScreenState(errorMessage = it.errorMess))
                 }
             }

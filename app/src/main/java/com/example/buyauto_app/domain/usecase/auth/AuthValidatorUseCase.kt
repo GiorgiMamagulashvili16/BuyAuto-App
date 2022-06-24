@@ -7,45 +7,45 @@ import com.example.buyauto_app.domain.util.extensions.isNotValidEmail
 
 class AuthValidatorUseCase(private val resource: StringResourceProvider) {
 
-    fun validateSignIn(email: String, password: String): AuthValidatorResult {
+    fun validateSignIn(email: String, password: String): ValidatorResult {
         return when {
-            email.isBlank() || password.isBlank() -> AuthValidatorResult(
+            email.isBlank() || password.isBlank() -> ValidatorResult(
                 false,
                 resource.getString(R.string.please_fill_all_field)
             )
-            email.isNotValidEmail() -> AuthValidatorResult(
+            email.isNotValidEmail() -> ValidatorResult(
                 false,
                 resource.getString(R.string.incorrect_email)
             )
-            password.length <= 3 -> AuthValidatorResult(
+            password.length <= 3 -> ValidatorResult(
                 false,
                 resource.getString(R.string.password_is_too_short)
             )
-            else -> AuthValidatorResult()
+            else -> ValidatorResult()
         }
     }
 
-    fun validateSignUp(user: User, repeatPassword: String): AuthValidatorResult {
+    fun validateSignUp(user: User, repeatPassword: String): ValidatorResult {
         with(user) {
             return when {
-                email.isBlank() || password.isNullOrBlank() || username.isBlank() || repeatPassword.isBlank() -> AuthValidatorResult(
+                email.isBlank() || password.isNullOrBlank() || username.isBlank() || repeatPassword.isBlank() -> ValidatorResult(
                     false,
                     resource.getString(R.string.please_fill_all_field)
                 )
-                email.isNotValidEmail() -> AuthValidatorResult(
+                email.isNotValidEmail() -> ValidatorResult(
                     false,
                     resource.getString(R.string.incorrect_email)
                 )
-                password.length <= 3 -> AuthValidatorResult(
+                password.length <= 3 -> ValidatorResult(
                     false,
                     resource.getString(R.string.password_is_too_short)
                 )
-                password != repeatPassword -> AuthValidatorResult(
+                password != repeatPassword -> ValidatorResult(
                     false,
                     resource.getString(R.string.passwords_does_not_matches)
                 )
 
-                else -> AuthValidatorResult()
+                else -> ValidatorResult()
             }
         }
     }
