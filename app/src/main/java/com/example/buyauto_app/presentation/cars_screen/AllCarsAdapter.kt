@@ -2,10 +2,12 @@ package com.example.buyauto_app.presentation.cars_screen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.buyauto_app.databinding.CarListItemBinding
 import com.example.buyauto_app.domain.model.CarItem
+import com.google.firebase.auth.FirebaseAuth
 
 class AllCarsAdapter(
     private val data: List<CarItem>,
@@ -18,6 +20,8 @@ class AllCarsAdapter(
                 priceTextView.text = "${item.price}$"
                 manufactureTextView.text = item.manufacture
                 modelTextView.text = "${item.model} \n ${item.year}"
+                usernameTextView.text = item.ownerUserName
+                openButton.isVisible = FirebaseAuth.getInstance().currentUser?.uid!! != item.ownerId
                 item.carImageList?.let {
                     imageViewPager.adapter = ViewPagerAdapter(it)
                     imageViewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL

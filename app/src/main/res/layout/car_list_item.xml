@@ -70,7 +70,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/openButton"
-            android:layout_width="@dimen/dimen_200_dp"
+            android:layout_width="@dimen/dimen_150_dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_10_dp"
             android:background="@drawable/bg_button"
@@ -78,6 +78,31 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="Owner: "
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priceTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="6dp"
+            android:textColor="@color/text_pink"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/openButton"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView2"
+            app:layout_constraintTop_toBottomOf="@+id/priceTextView"
+            tools:text="george" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

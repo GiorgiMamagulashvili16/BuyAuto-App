@@ -14,7 +14,7 @@ data class CarItem(
     val date: Long? = null,
     val lat: Double? = null,
     val long: Double? = null,
-    val price: Number? = null,
+    val price: Int? = null,
     @get:Exclude var ownerUserName: String? = null,
     val ownerNumber: String? = null
 ) : Serializable

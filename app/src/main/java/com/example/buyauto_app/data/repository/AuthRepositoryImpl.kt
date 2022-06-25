@@ -40,6 +40,6 @@ class AuthRepositoryImpl(
         }
     }
     companion object {
-        private const val USER_COLL = "user_collection"
+        const val USER_COLL = "user_collection"
     }
 }
