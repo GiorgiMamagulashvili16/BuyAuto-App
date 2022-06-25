@@ -20,6 +20,13 @@ class AddCarViewModel(
     private val _screenState = MutableLiveData<AddCarScreenState>()
     val screenState: LiveData<AddCarScreenState> = _screenState
 
+    private val _currentManufactureType = MutableLiveData<Int?>(null)
+    val currentManufactureType: LiveData<Int?> = _currentManufactureType
+
+    fun setType(type: Int) {
+        _currentManufactureType.postValue(type)
+    }
+
     fun setImages(images: List<Uri>) {
         _selectedImages.postValue(images)
     }

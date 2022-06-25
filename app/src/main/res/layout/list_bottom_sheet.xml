@@ -8,4 +8,5 @@
         android:layout_height="match_parent"
         android:id="@+id/recyclerView"
         android:layout_margin="@dimen/dimen_10_dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

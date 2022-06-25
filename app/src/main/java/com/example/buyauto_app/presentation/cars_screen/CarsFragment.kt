@@ -43,7 +43,6 @@ class CarsFragment : BaseFragment<CarsFragmentBinding,CarsViewModel>() {
     private fun setUpAllData(data: List<CarItem>) {
         binding.allCarsRecyclerView.apply {
             adapter = AllCarsAdapter(data) {
-
                 findNavController().navigate(
                     CarsFragmentDirections.actionGlobalCarDetailsFragment(it)
                 )
