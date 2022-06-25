@@ -4,6 +4,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.buyauto_app.R
 import com.example.buyauto_app.databinding.SplashFragmentBinding
 import com.example.buyauto_app.domain.util.extensions.liveDataObserver
+import com.example.buyauto_app.domain.util.extensions.setAfterAnimOver
 import com.example.buyauto_app.presentation.base.BaseFragment
 import com.example.buyauto_app.presentation.base.Inflate
 import kotlin.reflect.KClass
@@ -20,10 +21,12 @@ class SplashFragment : BaseFragment<SplashFragmentBinding,SplashViewModel>() {
         viewModel.checkIsUserLogged()
 
         liveDataObserver(viewModel.isUserLogged) {
-            if (it)
-                findNavController().navigate(R.id.action_splashFragment_to_dashboardFragment)
-            else
-                findNavController().navigate(R.id.action_splashFragment_to_authFragment)
+          binding.root.setAfterAnimOver {
+              if (it)
+                  findNavController().navigate(R.id.action_splashFragment_to_dashboardFragment)
+              else
+                  findNavController().navigate(R.id.action_splashFragment_to_authFragment)
+          }
         }
     }
 

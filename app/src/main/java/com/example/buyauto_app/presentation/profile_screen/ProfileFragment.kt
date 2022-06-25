@@ -13,6 +13,9 @@ import com.example.buyauto_app.presentation.add_car_screen.bottom_sheet.ListBott
 import com.example.buyauto_app.presentation.base.BaseFragment
 import com.example.buyauto_app.presentation.base.Inflate
 import com.example.buyauto_app.presentation.cars_screen.AllCarsAdapter
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlin.reflect.KClass
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding, ProfileViewModel>() {
@@ -64,7 +67,10 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding, ProfileViewModel>()
                     )
                 )
             ) {
-            viewModel.logout()
+                FirebaseAuth.getInstance().signOut()
+                val navController = findNavController()
+                navController.setGraph(R.navigation.main_graph)
+                navController.navigate(R.id.action_global_authFragment)
             }
         }
     }

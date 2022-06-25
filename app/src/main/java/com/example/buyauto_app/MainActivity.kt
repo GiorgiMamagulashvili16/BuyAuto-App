@@ -1,27 +1,35 @@
 package com.example.buyauto_app
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.buyauto_app.services.BatteryReceiver
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity : AppCompatActivity() {
+
+    private val batteryReceiver by lazy { BatteryReceiver() }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val uid = FirebaseAuth.getInstance().currentUser?.uid!!
-        FirebaseMessaging.getInstance().subscribeToTopic("/topics/$uid")
+        val uid =  FirebaseAuth.getInstance().currentUser?.uid
+        uid?.let {
+            FirebaseMessaging.getInstance().subscribeToTopic("/topics/$uid")
+        }
+
+        registerReceiver(batteryReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(batteryReceiver)
     }
 
     companion object {
         const val CONTENT_TYPE = "application/json"
-        const val SERVER_KEY = "AAAAtx0Omf4:APA91bGjtH3brFC5aXxGFqvwn3AjYTHJJJiaJLA2ZXintNnXHm-aIkywJ4JzjamkL6Bt0KDHjfZZjMZ7PZd8PAEF9zC6Amk0L2kthhIMr2khneTHqpW3mkbCjwAjijVKTYJiM7cJ5WKj"
+        const val SERVER_KEY = "AAAAw3ODhoI:APA91bEQ7SDFlgPWqztfzGDyh3OjIy5AJV8At-YRHRfuxsiJvixbubV-eA_6kcE_0pt4AetSrOoatcRyUmJi0IzrMZjTCuIVXNWgGsq2hkPX9nU6T1wXGkGfASI37pBkQnyKs2mJWaAX"
     }
 }
-
-
-/*
-    ლოგინ/რეგისტრაცია, მანქანაების ჩამონათვალი, კატეგორიები, ვიპ კატეგორია,
-     მანქანის დამატება, დეტალები, ნომრით დარეკვა, გუგლ მაპზე გადატანა, პუშ ნოთფიკაცია მანქანის დამატებაზე
- */

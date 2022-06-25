@@ -21,6 +21,7 @@ class AuthFragment : BaseFragment<AuthFragmentBinding, AuthViewModel>() {
     override fun onBindViewModel(viewModel: AuthViewModel) {
         setListeners(viewModel)
         observeAuthState(viewModel)
+        binding.passwordEditText.setPasswordToggle()
     }
     private fun observeAuthState(viewModel: AuthViewModel){
         liveDataObserver(viewModel.authScreenState){
@@ -29,17 +30,19 @@ class AuthFragment : BaseFragment<AuthFragmentBinding, AuthViewModel>() {
                     findNavController().navigate(R.id.action_authFragment_to_dashboardFragment)
                 }
                 it.isSignUpSuccess -> {
-                    createSnackBar("successfully created new account"){
-                        setAction("ok"){
+                    createSnackBar(getString(R.string.successfully_created_account)){
+                        setAction(getString(R.string.ok)){
                             dismiss()
                         }
                     }
-                    binding.root.setTransition(R.id.authTransition)
-                    binding.root.transitionToStart()
+                    binding.root.apply {
+                        setTransition(R.id.authTransition)
+                        transitionToStart()
+                    }
                 }
                 it.errorMessage != null -> {
                     createSnackBar(it.errorMessage){
-                        setAction("ok"){
+                        setAction(getString(R.string.ok)){
                             dismiss()
                         }
                     }

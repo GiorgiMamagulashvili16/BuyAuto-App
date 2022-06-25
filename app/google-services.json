@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "786466511358",
-    "project_id": "buycarapp-2da20",
-    "storage_bucket": "buycarapp-2da20.appspot.com"
+    "project_number": "839456622210",
+    "project_id": "buyauto-7a2e5",
+    "storage_bucket": "buyauto-7a2e5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:786466511358:android:eec7b8b7845eaf83ea48af",
+        "mobilesdk_app_id": "1:839456622210:android:7a35c6fd071f0dad79569b",
         "android_client_info": {
           "package_name": "com.example.buyauto_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "786466511358-fq8uhvu4erin8l1l90b8100qij4p3tmr.apps.googleusercontent.com",
+          "client_id": "839456622210-3dklo1mrhlg62dkfvph2dceoh9hoorqn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAG0hb_YQHeOLnIMpZ2Q0aq3-ZGEJHNFXE"
+          "current_key": "AIzaSyDMT5cGIeIifAtXB6yDSL6l4iDYKXiIz9k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "786466511358-fq8uhvu4erin8l1l90b8100qij4p3tmr.apps.googleusercontent.com",
+              "client_id": "839456622210-3dklo1mrhlg62dkfvph2dceoh9hoorqn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

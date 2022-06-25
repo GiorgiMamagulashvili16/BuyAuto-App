@@ -20,9 +20,9 @@ class NotificationRepositoryImpl(
             )
             if (response.isSuccessful) {
                 val body = response.body()!!
-                Log.d("NOTREPSONSE", "$body")
+                Log.d("RESPONSE", "$body")
             } else {
-                Log.d("NOTREPSONSE", "${response.errorBody()}")
+                Log.d("RESPONSE", "${response.errorBody()}")
             }
         }
     }

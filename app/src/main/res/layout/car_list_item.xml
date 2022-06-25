@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_10_dp"
             android:background="@drawable/bg_button"
-            android:text="open"
+            android:text="@string/open"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:text="Owner: "
+            android:text="@string/owner"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

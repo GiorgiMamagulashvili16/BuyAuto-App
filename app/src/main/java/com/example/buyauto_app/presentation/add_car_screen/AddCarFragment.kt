@@ -12,11 +12,14 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.buyauto_app.R
 import com.example.buyauto_app.databinding.AddCarFragmentBinding
 import com.example.buyauto_app.domain.util.extensions.createSnackBar
 import com.example.buyauto_app.domain.util.extensions.liveDataObserver
 import com.example.buyauto_app.presentation.add_car_screen.bottom_sheet.BottomSheetModel
 import com.example.buyauto_app.presentation.add_car_screen.bottom_sheet.ListBottomSheet
+import com.example.buyauto_app.presentation.add_car_screen.util.CarList
+import com.example.buyauto_app.presentation.add_car_screen.util.CarManufactures
 import com.example.buyauto_app.presentation.base.BaseFragment
 import com.example.buyauto_app.presentation.base.Inflate
 import com.google.android.gms.location.*
@@ -45,8 +48,7 @@ open class AddCarFragment : BaseFragment<AddCarFragmentBinding, AddCarViewModel>
         }
         setImagePickerLauncher(viewModel)
         observeImages(viewModel)
-        fusedLocationProviderClient =
-            LocationServices.getFusedLocationProviderClient(requireContext())
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireContext())
         locationPermissionsRequest()
         observeScreenState(viewModel)
         setListeners(viewModel)
@@ -106,13 +108,13 @@ open class AddCarFragment : BaseFragment<AddCarFragmentBinding, AddCarViewModel>
         liveDataObserver(viewModel.screenState) {
             binding.loadingProgressBar.isVisible = it.isLoading
             if (it.isSuccessFull) {
-                createSnackBar("successfully added car item") {
-                    setAction("ok") { dismiss() }
+                createSnackBar(getString(R.string.successfully_added)) {
+                    setAction(getString(R.string.ok)) { dismiss() }
                 }
             }
             it.errorMessage?.let { message ->
                 createSnackBar(message) {
-                    setAction("ok") { dismiss() }
+                    setAction(getString(R.string.ok)) { dismiss() }
                 }
             }
         }
@@ -121,7 +123,7 @@ open class AddCarFragment : BaseFragment<AddCarFragmentBinding, AddCarViewModel>
     private fun observeImages(viewModel: AddCarViewModel) {
         liveDataObserver(viewModel.selectedImages) {
             setUpRecyclerView(it)
-            binding.chooseImageTextView.isVisible = it.isNotEmpty()
+            binding.chooseImageTextView.isVisible = false
         }
     }
 
@@ -224,14 +226,8 @@ open class AddCarFragment : BaseFragment<AddCarFragmentBinding, AddCarViewModel>
     override fun onPause() {
         super.onPause()
         locationCallback?.let {
-            val removeLocationUpdate =
-                fusedLocationProviderClient.removeLocationUpdates(it)
-            removeLocationUpdate.addOnCompleteListener { task ->
-                if (task.isSuccessful)
-                    Log.d("RemoveLocationUpdate", "successfully removed")
-                else
-                    Log.d("RemoveLocationUpdate", "failure")
-            }
+            fusedLocationProviderClient.removeLocationUpdates(it)
+
         }
     }
 
@@ -253,59 +249,4 @@ open class AddCarFragment : BaseFragment<AddCarFragmentBinding, AddCarViewModel>
             )
         )
     }
-}
-
-object CarList {
-    val mercedesModels = listOf(
-        BottomSheetModel(title = "E-class"),
-        BottomSheetModel(title = "A-class"),
-        BottomSheetModel(title = "GT-class"),
-        BottomSheetModel(title = "B-class"),
-        BottomSheetModel(title = "S-class"),
-        BottomSheetModel(title = "G-class"),
-        BottomSheetModel(title = "CLS-class"),
-    )
-    val audiModels = listOf(
-        BottomSheetModel(title = "TT"),
-        BottomSheetModel(title = "S1"),
-        BottomSheetModel(title = "S2"),
-        BottomSheetModel(title = "S3"),
-        BottomSheetModel(title = "A6"),
-        BottomSheetModel(title = "A4"),
-        BottomSheetModel(title = "RS6"),
-    )
-    val nissanModels = listOf(
-        BottomSheetModel(title = "Skyline"),
-        BottomSheetModel(title = "350z"),
-        BottomSheetModel(title = "370z"),
-        BottomSheetModel(title = "Cube"),
-        BottomSheetModel(title = "Silvia"),
-        BottomSheetModel(title = "X-Terra"),
-    )
-    val yearsList = listOf(
-        BottomSheetModel(title = "1999"),
-        BottomSheetModel(title = "2000"),
-        BottomSheetModel(title = "2001"),
-        BottomSheetModel(title = "2002"),
-        BottomSheetModel(title = "2003"),
-        BottomSheetModel(title = "2004"),
-        BottomSheetModel(title = "2005"),
-        BottomSheetModel(title = "2006"),
-        BottomSheetModel(title = "2007"),
-        BottomSheetModel(title = "2008"),
-        BottomSheetModel(title = "2009"),
-        BottomSheetModel(title = "2010"),
-        BottomSheetModel(title = "2011"),
-        BottomSheetModel(title = "2012"),
-        BottomSheetModel(title = "2013"),
-        BottomSheetModel(title = "2014"),
-        BottomSheetModel(title = "2015"),
-        BottomSheetModel(title = "2016"),
-        BottomSheetModel(title = "2017"),
-        BottomSheetModel(title = "2018"),
-    )
-}
-
-enum class CarManufactures(val value: Int, val title: String) {
-    MERCEDES(1, "Mercedes-Benz"), AUDI(2, "Audi"), NISSAN(3, "Nissan")
 }

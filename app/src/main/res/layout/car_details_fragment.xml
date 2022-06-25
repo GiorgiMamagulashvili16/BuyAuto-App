@@ -74,7 +74,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/bg_button"
                 android:backgroundTint="@color/text_pink"
-                android:text="Get Number"
+                android:text="@string/get_number"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:background="@drawable/bg_button"
-                android:text="Location"
+                android:text="@string/location"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
@@ -96,7 +96,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_20_dp"
                 android:layout_marginBottom="@dimen/dimen_50_dp"
                 android:background="@drawable/bg_button"
-                android:text="I'm interested"
+                android:text="@string/i_m_interested"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

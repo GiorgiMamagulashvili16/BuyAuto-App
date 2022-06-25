@@ -12,4 +12,20 @@
     <string name="password_is_too_short">Password is too short</string>
     <string name="passwords_does_not_matches">password does not match</string>
     <string name="choose_images">choose images</string>
+    <string name="successfully_added">Successfully added car item</string>
+    <string name="ok">OK</string>
+    <string name="successfully_created_account">successfully created new account</string>
+    <string name="model">Model</string>
+    <string name="year">Year</string>
+    <string name="description">description</string>
+    <string name="price">price</string>
+    <string name="your_number">your number</string>
+    <string name="save_car">Save Car</string>
+    <string name="manufacture">Manufacture</string>
+    <string name="get_number">Get Number</string>
+    <string name="location">Location</string>
+    <string name="i_m_interested">I\'m interested</string>
+    <string name="open">open</string>
+    <string name="owner">Owner:</string>
+    <string name="my_items">My Items</string>
 </resources>
