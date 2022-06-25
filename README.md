@@ -3,7 +3,7 @@ BuyAuto is a application where user can buy or sell cars.
 
 
 ### Instruction 
-User must create new account and log in application, after that there are list of cars which is ready to sell. also user can add own car with information and images and sell it.
+User must create new account and log in application, after that there are list of cars which is ready to sell.user can see detail informatiom, seller number or location. also user can add own car with information and images and sell it.
 ## Libraries and tools 🛠
 
 <li><a href="https://developer.android.com/topic/libraries/architecture/navigation/">Navigation</a></li>
