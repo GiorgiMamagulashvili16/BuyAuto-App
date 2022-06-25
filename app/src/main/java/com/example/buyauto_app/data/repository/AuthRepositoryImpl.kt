@@ -1,6 +1,6 @@
 package com.example.buyauto_app.data.repository
 
-import com.example.buyauto_app.data.data.UserDto
+import com.example.buyauto_app.data.model.UserDto
 import com.example.buyauto_app.domain.model.User
 import com.example.buyauto_app.domain.repository.AuthRepository
 import com.example.buyauto_app.domain.util.Resource

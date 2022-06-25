@@ -1,4 +1,4 @@
-package com.example.buyauto_app.data.data
+package com.example.buyauto_app.data.model
 
 import com.example.buyauto_app.domain.model.User
 

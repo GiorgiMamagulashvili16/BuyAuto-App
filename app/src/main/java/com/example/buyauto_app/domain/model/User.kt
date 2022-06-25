@@ -1,6 +1,6 @@
 package com.example.buyauto_app.domain.model
 
-import com.example.buyauto_app.data.data.UserDto
+import com.example.buyauto_app.data.model.UserDto
 
 data class User(
     var uid: String? = null,

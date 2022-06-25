@@ -47,6 +47,9 @@ class CarDetailsFragment : BaseFragment<CarDetailsFragmentBinding, CarDetailsVie
             intent.data = Uri.parse("tel:${viewModel.carItem.value?.ownerNumber}")
             startActivity(intent)
         }
+        interestedButton.setOnClickListener {
+            viewModel.sendNotification(viewModel.carItem.value?.ownerId!!,viewModel.carItem.value?.ownerUserName!!,viewModel.carItem.value?.model!!)
+        }
     }
 
     private fun observeCarItem(viewModel: CarDetailsViewModel) {
