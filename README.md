@@ -17,7 +17,7 @@ User must create new account and log in application, after that there are list o
 ## Architecture
 
 The app uses MVVM/Clean architecture.
-<img src ="https://miro.medium.com/max/772/1*3z8ArkV_C1nQ94TFzas_pQ.jpeg" width="700" height ="300">
+<img src ="https://miro.medium.com/max/772/1*3z8ArkV_C1nQ94TFzas_pQ.jpeg" width="700" height ="500">
 
 <pre><code>
 
